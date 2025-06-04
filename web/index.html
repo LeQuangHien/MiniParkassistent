@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mini-Parkassistent</title>
+    <meta charset="utf-8">
+    <style>
+        body { font-family: sans-serif; text-align: center; padding-top: 50px; }
+        #distance { font-size: 3em; }
+    </style>
+</head>
+<body>
+    <h1>Abstand</h1>
+    <div id="distance">Lade...</div>
+
+    <script>
+        async function updateDistance() {
+            const res = await fetch('/distance');
+            const data = await res.json();
+            document.getElementById('distance').innerText = data.distance_cm.toFixed(2) + ' cm';
+        }
+
+        setInterval(updateDistance, 500);
+    </script>
+</body>
+</html>
