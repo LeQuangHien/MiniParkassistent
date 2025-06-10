@@ -6,7 +6,7 @@ set(CMAKE_CXX_STANDARD 17)
 include_directories(include)
 
 add_executable(MiniParkassistent
-    main.cpp
+    src/main.cpp
     src/distance_sensor.cpp
 )
 
