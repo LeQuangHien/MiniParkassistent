@@ -31,3 +31,37 @@ http://<Raspberry_Pi_IP>:8080
 - HC-SR04 oder VL53L0X Sensor
 - Raspberry Pi 4
 - Jumper-Kabel
+
+## 📐 Text-Schaltplan für Raspberry Pi 4 GPIO-Verbindungen
+```
+[Raspberry Pi 4 GPIO-Pins]
+
+                          HC-SR04
+                    +------------------+
+VCC (5V, Pin 2) ----| VCC              |
+GND (Pin 6) --------| GND              |
+GPIO23 (Pin 16) ----| TRIG             |
+                    | ECHO             |----+
+                    +------------------+    |
+                                            |
+                                          [1 kΩ]
+                                            |
+                                            +----> GPIO24 (Pin 18)
+                                            |
+                                          [2 kΩ]
+                                            |
+                                           GND (Pin 14)
+
+                          LEDs (über 330 Ω)
+                          ------------------
+
+GPIO17 (Pin 11) ----[330 Ω]----->|---- Breadboard GND-Leiste  (LED Rot)
+GPIO27 (Pin 13) ----[330 Ω]----->|---- Breadboard GND-Leiste  (LED Gelb)
+GPIO22 (Pin 15) ----[330 Ω]----->|---- Breadboard GND-Leiste  (LED Grün)
+
+                          Buzzer (passiv)
+                          ----------------
+
+GPIO18 (Pin 12) -----------------> (+)Buzzer(-) ---- GND (Pin 9)
+
+```
