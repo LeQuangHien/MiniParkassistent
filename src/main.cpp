@@ -18,7 +18,7 @@ void sensor_loop() {
 }
 
 int main() {
-    active_sensor = std::make_shared<HCSR04Sensor>(17, 27);
+    active_sensor = std::make_shared<HCSR04Sensor>(16, 18);
     std::thread t(sensor_loop);
     start_webserver(current_distance);
     running = false;
