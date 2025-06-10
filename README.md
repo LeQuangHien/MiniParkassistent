@@ -28,8 +28,11 @@ Dann im Browser öffnen: `http://<Raspberry_Pi_IP>:8080`
 http://<Raspberry_Pi_IP>:8080
 ```
 ## 🪛 Hardware
-- HC-SR04 oder VL53L0X Sensor
 - Raspberry Pi 4
+- HC-SR04 oder VL53L0X Sensor
+- LED Rot, LED Gelb, LED Grün
+- Buzzer
+- Widerständen
 - Jumper-Kabel
 
 ## 📐 Text-Schaltplan für Raspberry Pi 4 GPIO-Verbindungen
