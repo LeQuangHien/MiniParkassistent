@@ -1,4 +1,4 @@
-# 🚗 Mini Parkassistent mit Raspberry Pi, C++ und Webinterface
+# 🚗 Mini Parkassistent mit Raspberry Pi, C++ und Webinterface (🚧 In Arbeit)
 
 Dies ist ein einfaches Embedded-Projekt mit dem Raspberry Pi 4 zur Abstandsmessung mittels HC-SR04 oder VL53L0X, umgesetzt in C++ mit einem lokalen Webinterface über WLAN.
 
