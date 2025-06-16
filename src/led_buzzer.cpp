@@ -12,6 +12,18 @@ enum class WarningLevel {
     DANGER
 };
 
+void setup_led_buzzer() {
+    pinMode(LED_RED_PIN, OUTPUT);
+    pinMode(LED_YELLOW_PIN, OUTPUT);
+    pinMode(LED_GREEN_PIN, OUTPUT);
+    pinMode(BUZZER_PIN, OUTPUT);
+
+    digitalWrite(LED_RED_PIN, LOW);
+    digitalWrite(LED_YELLOW_PIN, LOW);
+    digitalWrite(LED_GREEN_PIN, LOW);
+    digitalWrite(BUZZER_PIN, LOW);
+}
+
 void set_warning(float distance_cm) {
     static WarningLevel last_level = WarningLevel::SAFE;
 
