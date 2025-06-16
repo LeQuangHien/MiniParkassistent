@@ -13,9 +13,11 @@ public:
     HCSR04Sensor(int trigger_pin, int echo_pin);
     float get_distance_cm() override;
     std::string get_name() const override;
+
 private:
     int trigger_pin_;
     int echo_pin_;
+    bool wait_for_pin_state(int pin, bool state, int timeout_us);
 };
 
 class VL53L0XSensor : public DistanceSensor {
