@@ -24,6 +24,9 @@ void set_warning(float distance_cm) {
     digitalWrite(LED_GREEN_PIN, LOW);
     digitalWrite(BUZZER_PIN, LOW);
 
+    // Kurze Pause zum Stabilisieren
+    delay(1);  // 1 ms
+
     if (distance_cm < 10.0f) {
         digitalWrite(LED_RED_PIN, HIGH);
         digitalWrite(BUZZER_PIN, HIGH);
