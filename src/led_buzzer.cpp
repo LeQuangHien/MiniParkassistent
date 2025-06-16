@@ -19,10 +19,14 @@ void setup_led_buzzer() {
 }
 
 void set_warning(float distance_cm) {
+    // Alle ausschalten
     digitalWrite(LED_RED_PIN, LOW);
     digitalWrite(LED_YELLOW_PIN, LOW);
     digitalWrite(LED_GREEN_PIN, LOW);
     digitalWrite(BUZZER_PIN, LOW);
+
+    // Kurze Pause zum Stabilisieren
+    delay(20);  // 20 ms
 
     if (distance_cm < 10.0f) {
         digitalWrite(LED_RED_PIN, HIGH);
