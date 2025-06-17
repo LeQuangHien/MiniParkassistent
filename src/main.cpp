@@ -1,10 +1,12 @@
 #include "distance_sensor.hpp"
 #include "led_buzzer.hpp"
+#include "webserver.hpp"
 #include <wiringPi.h>
 #include <iostream>
 #include <thread>
 #include <chrono>
 
+float current_distance = 0.0f;
 constexpr int TRIGGER_PIN = 23; // GPIO23
 constexpr int ECHO_PIN = 24;    // GPIO24
 
@@ -16,9 +18,9 @@ int main() {
     std::thread server_thread(start_webserver, std::ref(current_distance));
 
     while (true) {
-        float distance = sensor.get_distance_cm();
-        std::cout << "Entfernung: " << distance << " cm" << std::endl;
-        set_warning(distance);
+        current_distance = sensor.get_distance_cm();
+        std::cout << "Entfernung: " << current_distance << " cm" << std::endl;
+        set_warning(current_distance);
         std::this_thread::sleep_for(std::chrono::milliseconds(500));
     }
 
