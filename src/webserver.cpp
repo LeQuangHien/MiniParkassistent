@@ -15,6 +15,7 @@ static MHD_Result answer_to_connection(void *cls, struct MHD_Connection *connect
                                        const char *version, const char *upload_data,
                                        size_t *upload_data_size, void **con_cls) {
     std::string response;
+    printf("HTTP Request: %s\n", url);
     if (std::string(url) == "/distance") {
         std::ostringstream ss;
         ss << "{ \"distance_cm\": " << current_distance << " }";
