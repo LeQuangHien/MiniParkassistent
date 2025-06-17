@@ -32,7 +32,7 @@ static MHD_Result answer_to_connection(void *cls, struct MHD_Connection *connect
                     (void *)response.c_str(), MHD_RESPMEM_MUST_COPY);
     int ret = MHD_queue_response(connection, MHD_HTTP_OK, mhd_response);
     MHD_destroy_response(mhd_response);
-    return ret;
+    return static_cast<MHD_Result>(ret);
 }
 
 void start_webserver(float &distance) {
