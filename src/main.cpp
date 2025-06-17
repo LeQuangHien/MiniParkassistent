@@ -13,6 +13,7 @@ int main() {
     setup_led_buzzer();  // Initialisiere LED/Buzzer-Pins
 
     HCSR04Sensor sensor(TRIGGER_PIN, ECHO_PIN);
+    std::thread server_thread(start_webserver, std::ref(current_distance));
 
     while (true) {
         float distance = sensor.get_distance_cm();

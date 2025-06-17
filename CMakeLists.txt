@@ -9,6 +9,11 @@ add_executable(MiniParkassistent
     src/main.cpp
     src/distance_sensor.cpp
     src/led_buzzer.cpp
+    src/webserver.cpp
 )
 
-target_link_libraries(MiniParkassistent wiringPi pthread)
+target_link_libraries(MiniParkassistent
+    wiringPi
+    microhttpd
+    pthread
+)
