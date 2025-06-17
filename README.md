@@ -68,3 +68,8 @@ GPIO22 (Pin 15) ----[330 Ω]----->|---- Breadboard GND-Leiste  (LED Grün)
 GPIO18 (Pin 12) -----------------> (+)Buzzer(-) ---- GND (Pin 9)
 
 ```
+
+## 🎥 Demo-Video
+
+[!Watch the video](https://youtu.be/yX5S4pld-jY)
+
