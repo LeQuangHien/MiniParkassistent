@@ -3,15 +3,17 @@
 #include <string>
 #include <sstream>
 #include <fstream>
+#include <thread>
+#include <chrono>
 
 extern float current_distance;
 
 #define PORT 8080
 
-static int answer_to_connection(void *cls, struct MHD_Connection *connection,
-                                const char *url, const char *method,
-                                const char *version, const char *upload_data,
-                                size_t *upload_data_size, void **con_cls) {
+static MHD_Result answer_to_connection(void *cls, struct MHD_Connection *connection,
+                                       const char *url, const char *method,
+                                       const char *version, const char *upload_data,
+                                       size_t *upload_data_size, void **con_cls) {
     std::string response;
     if (std::string(url) == "/distance") {
         std::ostringstream ss;
