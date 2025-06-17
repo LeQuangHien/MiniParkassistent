@@ -11,6 +11,11 @@ Dies ist ein einfaches Embedded-Projekt mit dem Raspberry Pi 4 zur Abstandsmessu
 - Raspberry Pi 4 mit Raspberry Pi OS
 - wiringPi installiert
 - G++ und CMake
+  
+## 🧠 Logik
+- Entfernung >= 25 cm: LED Grün
+- 10 cm <= Entfernung < 25 cm: LED Geld
+- Entfernung < 10 cm: LED Rot und Buzzer
 
 ## 🚀 Kompilierung
 ```bash
